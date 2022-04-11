@@ -11,7 +11,6 @@ class Solution(object):
             return grid
         
         grid1 = [[0 for i in range(n)] for j in range(m)]
-        print(grid1)
         
         k = k % (m*n)
         
