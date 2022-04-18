@@ -13,17 +13,15 @@ class Solution(object):
         """
         arr = []
         
-        def preorder(node):
+        def inorder(node):
             if(node is None):
                 return
+            inorder(node.left)
             arr.append(node.val)
-            preorder(node.left)
-            preorder(node.right)
+            inorder(node.right)
             
         
-        preorder(root)
-        
-        arr.sort()
+        inorder(root)
         
         return arr[k-1]
             
