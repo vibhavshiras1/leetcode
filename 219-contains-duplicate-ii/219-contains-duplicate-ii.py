@@ -13,11 +13,11 @@ class Solution(object):
         
         for i in range(len(nums)):
             if(nums[i] not in dict1):
-                dict1[nums[i]] = [i]
+                dict1[nums[i]] = i
             else:
-                if(abs(i-dict1[nums[i]][-1])<=k):
+                if((i-dict1[nums[i]])<=k):
                     return True
                 else:
-                    dict1[nums[i]].append(i)
+                    dict1[nums[i]] = i
                 
         return False
