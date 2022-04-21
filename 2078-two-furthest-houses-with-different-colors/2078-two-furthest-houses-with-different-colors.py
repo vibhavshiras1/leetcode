@@ -6,10 +6,17 @@ class Solution(object):
         """
         max_diff = 0
         
-        for i in range(len(colors)):
-            for j in range(i):
-                if(colors[i]!=colors[j] and (i-j)>=max_diff):
-                    max_diff = (i-j)
+        p1 = 0
+        p2 = len(colors) - 1
+        
+        while(colors[0]==colors[p2]):
+            p2 -= 1
+            
+        while(colors[-1]==colors[p1]):
+            p1 += 1
+            
+        
+        max_diff = max(p2,len(colors)-1-p1)
                     
         return max_diff
             
