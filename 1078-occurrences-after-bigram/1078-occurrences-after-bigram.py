@@ -8,8 +8,6 @@ class Solution(object):
         """
         res = []
         words = text.split(' ')
-        count = 0
-        i = 0
         s = first + second
         
         for i in range(len(words)-2):
