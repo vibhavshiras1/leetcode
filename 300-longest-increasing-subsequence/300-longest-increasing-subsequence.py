@@ -6,20 +6,15 @@ class Solution(object):
         """
         arr = []
         
-        for i in range(len(nums)-1):
-            arr.append(0)
+        for i in range(len(nums)):
+            arr.append(1)
             
-        arr.append(1)
         max1 = 1
         
-        for i in range(len(nums)-2,-1,-1):
-            max_len = 0
+        for i in range(len(nums)-1,-1,-1):
             for j in range(i+1,len(nums)):
                 if(nums[i]<nums[j]):
-                    max_len = max(max_len,1+arr[j])
-                else:
-                    max_len = max(max_len,1)
-            arr[i] += max_len
+                    arr[i] = max(arr[i],1+arr[j])
             max1 = max(max1,arr[i])
         
         return max1
