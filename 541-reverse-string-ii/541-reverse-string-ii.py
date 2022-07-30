@@ -7,9 +7,7 @@ class Solution(object):
         """
         st = list(s)
         
-        count = 0
-        
-        l = count*(2*k)
+        l = 0
         p = min(l + 2*k - 1,len(st)-1)
         if(len(st)>=k):
             r = k - 1
