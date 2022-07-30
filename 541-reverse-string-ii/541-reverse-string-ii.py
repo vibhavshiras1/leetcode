@@ -24,12 +24,10 @@ class Solution(object):
             l = p + 1
             p = min(l+2*k-1,len(st)-1)
             diff = p - l + 1
-            if(diff==2*k):
-                r = l + k - 1
-            elif(diff>=k and diff<2*k):
-                r = l + k - 1
-            elif(diff<k):
+            if(diff<k):
                 r = p
+            else:
+                r = l + k - 1
                 
         res = ''.join(st)
         
