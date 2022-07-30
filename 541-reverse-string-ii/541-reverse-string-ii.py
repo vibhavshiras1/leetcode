@@ -11,12 +11,9 @@ class Solution(object):
         
         l = count*(2*k)
         p = min(l + 2*k - 1,len(st)-1)
-        diff = p - l + 1
-        if(diff==2*k):
-            r = l + k - 1
-        elif(diff>=k and diff<2*k):
-            r = l + k - 1
-        elif(diff<k):
+        if(len(st)>=k):
+            r = k - 1
+        else:
             r = p
         
         while(l<len(st)):
