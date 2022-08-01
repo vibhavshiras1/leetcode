@@ -1,13 +1,5 @@
 class Solution:
     def isBoomerang(self, points: List[List[int]]) -> bool:
-        dict1 = {}
-        
-        for point in points:
-            t = tuple(point)
-            if(t not in dict1):
-                dict1[t] = 1
-            else:
-                return False
         
         try:
             slope1 = (points[1][1] - points[0][1])/(points[1][0] - points[0][0])
