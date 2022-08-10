@@ -11,25 +11,34 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         res = []
-        d = {}
+        
+        def height(node):
+            if(node is None):
+                return 0
+            
+            l = height(node.left)
+            r = height(node.right)
+            
+            return max(l,r)+1
+        
         
         def dfs(node,c):
             if(node is None):
                 return
             
-            if(c not in d):
-                d[c] = [node.val]
-            else:
-                d[c].append(node.val)
+            res[c].append(node.val)
                 
             dfs(node.left,c+1)
             dfs(node.right,c+1)
+            
                 
+        h = height(root)
+        
+        for i in range(h):
+            res.append([])
+            
         dfs(root,0)
         
-        for i in range(len(d)):
-            res.append(d[i])
-            
         return res
             
             
