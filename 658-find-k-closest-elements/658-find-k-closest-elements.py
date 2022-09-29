@@ -6,7 +6,8 @@ class Solution(object):
         :type x: int
         :rtype: List[int]
         """
-        res = []
+        res1 = []
+        res2 = []
         
         
         stack1 = []
@@ -34,14 +35,14 @@ class Solution(object):
                 diff2 = float('inf')
                 
             if(diff1<=diff2):
-                res.append(stack1[-1])
+                res1.append(stack1[-1])
                 stack1.pop()
             else:
-                res.append(stack2[-1])
+                res2.append(stack2[-1])
                 stack2.pop()
                 
             k -= 1
             
             
-        res.sort()
+        res = res1[::-1] + res2
         return res
