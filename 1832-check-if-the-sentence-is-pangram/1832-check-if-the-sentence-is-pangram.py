@@ -4,13 +4,13 @@ class Solution(object):
         :type sentence: str
         :rtype: bool
         """
-        d = {}
+        s = set()
         
         for i in range(len(sentence)):
-            if(sentence[i] not in d):
-                d[sentence[i]] = 1
+            if(sentence[i] not in s):
+                s.add(sentence[i])
                 
-        if(len(d)==26):
+        if(len(s)==26):
             return True
         else:
             return False
